@@ -1,5 +1,5 @@
 # Pedal Pro Rentals: Agentforce AI Assistant
-![Pedal Pro AI Bike Rentals](Pedal%20Pro%20AI%20Bike%20Rentals.png)
+![Pedal Pro AI Bike Rentals](screenshots/Pedal%20Pro%20AI%20Bike%20Rentals.png)
 
 I earned the Salesforce Agentforce Specialist certification in December 2025 (credential 7317949, [verify it here](https://sforce.co/verifycerts) or see the [certificate PDF](docs/Agentforce_Specialist_Certificate.pdf)). This project is how I put it to work. I wanted to build something real instead of leaving the knowledge on a shelf.
 
