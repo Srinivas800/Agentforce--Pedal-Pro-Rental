@@ -97,7 +97,7 @@ The same bike before and after the booking:
 The rule is: no AI-driven cancellations within 2 hours of the start time.
 
 My first version told the agent to check a variable called `minutes_until_start`. The problem was that nothing in the project ever calculated it, so the agent just cancelled everything. The fix was to do the math inside a Flow, where it belongs. `Get_Booking_Name` has a formula that works out the minutes until the rental starts:
-     (Start_Date_Time__c - NOW()) * 1440
+   (Start_Date_Time__c - NOW()) * 1440
 Subtracting two date/times gives a number of days, and multiplying by 1440 turns that into minutes. The agent gets back a real number called `minutesUntilStartOutput` and branches on it:
 
 - More than 120: cancel the booking
