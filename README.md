@@ -97,7 +97,7 @@ The same bike before and after the booking:
 The rule is: no AI-driven cancellations within 2 hours of the start time.
 
 My first version told the agent to check a variable called `minutes_until_start`. The problem was that nothing in the project ever calculated it, so the agent just cancelled everything. The fix was to do the math inside a Flow, where it belongs. `Get_Booking_Name` has a formula that works out the minutes until the rental starts:
-(Start_Date_Time__c - NOW()) * 1440
+     (Start_Date_Time__c - NOW()) * 1440
 Subtracting two date/times gives a number of days, and multiplying by 1440 turns that into minutes. The agent gets back a real number called `minutesUntilStartOutput` and branches on it:
 
 - More than 120: cancel the booking
@@ -146,7 +146,7 @@ The second image is one of those runs landing on the "bike not available" branch
 
 ![Booking cancellation subagent](screenshots/subagent-booking-cancellation.png)
 
-**Escalation** (this one comes built in with Agentforce; my own escalation happens through the `Escalate_To_Human` Flow above)
+**Escalation** (this one comes built in with Agentforce; my own escalation happens through the `Escalyte_To_Human` Flow above)
 
 ![Escalation subagent](screenshots/subagent-escalation-default.png)
 
@@ -196,6 +196,7 @@ A customer said "electric bike" and the agent sent `e-bike` to the Flow. The Flo
 - Fixing the org time zone so test data doesn't need adjusting
 
 ## What's in this repo
+
 ├── README.md
 ├── demo/
 │   └── DEMO.mp4
@@ -204,6 +205,7 @@ A customer said "electric bike" and the agent sent `e-bike` to the Flow. The Flo
 │   ├── Pedal_Pro_Rentals_Agentforce_Study_Guide.pdf
 │   └── Agentforce_Specialist_Certificate.pdf
 └── screenshots/
+
 
 The two guides in `docs/` are my full build notes: every object and field, every Flow, the final agent instructions, and a log of every bug and fix. I wrote them mainly for my own reference.
 
